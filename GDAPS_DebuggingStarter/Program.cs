@@ -27,7 +27,7 @@
             userNumber1AsString = Console.ReadLine();
             Console.Write("Now, enter a number between 1 and 9: ");
             userNumber2AsString = Console.ReadLine();
-            userNumber2AsInt = double.Parse(userNumber2AsString);
+            userNumber2AsInt = int.Parse(userNumber2AsString);
             percentage = userNumber2AsInt / 10;
 
             // Perform necessary math on it!
