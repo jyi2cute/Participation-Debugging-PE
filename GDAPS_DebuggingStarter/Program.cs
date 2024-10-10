@@ -10,10 +10,11 @@
             string userAngleAsString = "";
             string userName = "";
             string newName = "";
+            int userNumber1AsInt = 0;
             int userNumber2AsInt = 0;
             int userAngleAsInt = 0;
-            int percentage;
-
+            double percentage;
+            double sineOfAngle = 0.866;
 
             // Ask the user for:
             //   1. number between 1 and 100
@@ -25,15 +26,16 @@
             Console.WriteLine();
             Console.Write("First, enter a number between 1 and 100: ");
             userNumber1AsString = Console.ReadLine();
+            userNumber1AsInt = int.Parse(userNumber1AsString);
             Console.Write("Now, enter a number between 1 and 9: ");
             userNumber2AsString = Console.ReadLine();
             userNumber2AsInt = int.Parse(userNumber2AsString);
-            percentage = userNumber2AsInt / 10;
+            percentage = userNumber2AsInt * 10;
 
             // Perform necessary math on it!
-            double userNumberAsPercentage = userNumber1AsInt * percentage;
+            double userNumberAsPercentage = userNumber1AsInt * (percentage/100);
             Console.WriteLine(
-                $"{percentage} of " +                  // Prints out of 100% (20%)
+                $"{percentage}% of " +                  // Prints out of 100% (20%)
                 $"{userNumber1AsString} is " +         // User's chosen starting value (50)
                 $"{userNumberAsPercentage}");          // Product (10)
 
@@ -45,7 +47,7 @@
             // Find the sin of the user's angle
             Console.WriteLine("Great! Now let's determine some trigonometry.");
             Console.WriteLine("Give me a whole angle in degrees, and I'll tell you the sine!");
-            string userAngleAsString = Console.ReadLine();
+            userAngleAsString = Console.ReadLine();
             userAngleAsInt = int.Parse(userAngleAsString);
 
             Console.WriteLine(
@@ -67,12 +69,12 @@
             //   like so:  Charlotte becomes harlotteC
             Console.WriteLine("Lastly, tell me your name!");
             userName = Console.ReadLine().Trim();                           // Emily
-            newName = userName.Substring(userName.Length) + userName[1];    // milyE
+            newName = userName.Substring(1) + userName[0];    // milyE
             Console.WriteLine("I will rename you " + newName + "!");
             Console.WriteLine();
-
+            
             // Goodbye!
-            Console.WriteLine("Thanks for playing my game!  Have a great day {newName} "!");
+            Console.WriteLine("Thanks for playing my game!  Have a great day "+ userName +"!");
         }
     }
 }
